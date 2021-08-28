@@ -1,4 +1,5 @@
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import CamelCaseNamingConfiguration from 'App/Dal/CamelCaseNamingConfiguration'
 
 export default class AppProvider {
   constructor(protected app: ApplicationContract) {}
@@ -12,7 +13,8 @@ export default class AppProvider {
   }
 
   public async ready() {
-    // App is ready
+    const { BaseModel } = (await import('@ioc:Adonis/Lucid/Orm')).default
+    BaseModel.namingStrategy = new CamelCaseNamingConfiguration()
   }
 
   public async shutdown() {
