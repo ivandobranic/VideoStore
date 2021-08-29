@@ -1,5 +1,5 @@
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
-import Language from 'App/Models/Language'
+import Language from 'App/Model/Language'
 
 export default class LanguageSeeder extends BaseSeeder {
   public static developmentOnly = true
