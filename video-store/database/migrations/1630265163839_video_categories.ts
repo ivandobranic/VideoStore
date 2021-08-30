@@ -1,14 +1,12 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class Users extends BaseSchema {
-  protected tableName = 'user'
+export default class VideoCategories extends BaseSchema {
+  protected tableName = 'VideoCategory'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary().notNullable()
-      table.string('email').notNullable().unique()
-      table.string('firstName').notNullable()
-      table.string('lastName').notNullable()
+      table.string('name').notNullable()
       table.timestamp('dateCreated', { useTz: true })
       table.timestamp('dateUpdated', { useTz: true })
     })

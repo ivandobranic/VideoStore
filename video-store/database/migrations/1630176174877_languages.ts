@@ -7,8 +7,8 @@ export default class Languages extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary().notNullable()
       table.string('name').notNullable()
-      table.timestamp('dateCreated', { useTz: false })
-      table.timestamp('dateUpdated', { useTz: false })
+      table.timestamp('dateCreated', { useTz: true })
+      table.timestamp('dateUpdated', { useTz: true })
     })
   }
 
