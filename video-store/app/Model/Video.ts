@@ -45,6 +45,7 @@ export default class Video extends BaseModel {
   public static assignUuid(video: Video) {
     video.id = uuidv4()
   }
+  @beforeCreate()
   public static createSLug(video: Video) {
     if (video.$dirty.title) {
       video.slug = video.title
